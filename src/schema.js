@@ -30,8 +30,10 @@ const typeDefs = gql`
     author: Author!
     "The track's illustration to display in track card or track page detail"
     thumbnail: String
+    "The track's full duration in seconds"
+    durationInSeconds: Int
     "The track's approximate length to complete, in minutes"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
     "The number of modules this track contains"
     modulesCount: Int
     "The track's complete description, can be in markdown format"
@@ -56,8 +58,10 @@ const typeDefs = gql`
     id: ID!
     "The module's title"
     title: String!
+    "The track's full duration in seconds"
+    durationInSeconds: Int
     "The module's length in minutes"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
     "The module's video URL"
     videoUrl: String
     "The modules's video content"
